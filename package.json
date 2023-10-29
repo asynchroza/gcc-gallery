@@ -1,0 +1,11 @@
+{
+  "name": "gcc-gallery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:asynchroza/gcc-gallery.git",
+  "author": "Michael Bozhilov <mbozhilov@quickbase.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zoomwall.js": "^2.1.1"
+  }
+}
