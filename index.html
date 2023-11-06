@@ -13,20 +13,38 @@
   <style>
     .text-overlay {
       position: absolute;
-      top: 0;
+      top: 60%;
       left: 0;
       width: 100%;
-      height: 100%;
-      color: black;
+      height: 40%;
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 1000;
       font-size: 10px;
+      animation: fadeIn 0.5s ease-in-out forwards;
     }
     .zoomwall {
       position: relative;
     }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
   <body>
     <div id="gallery" class="zoomwall">
+      <img src="/pictures/monet.jpg" />
+      <img src="/pictures/monet.jpg" />
+      <img src="/pictures/monet.jpg" />
+      <img src="/pictures/monet.jpg" />
       <img src="/pictures/monet.jpg" />
       <img src="/pictures/monet.jpg" />
       <img src="/pictures/monet.jpg" />
