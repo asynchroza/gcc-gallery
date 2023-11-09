@@ -254,12 +254,16 @@ function expand(block) {
         });
     }); 
 
+    // BEGIN CUSTOM IMPLEMENTATION -- @asynchroza
+
     const activeElement = document.getElementsByClassName("active")[0];
     const textOverlay = document.createElement("div");
     textOverlay.classList.add('text-overlay');
-    textOverlay.textContent = "Some Text Overlay";
+    textOverlay.textContent = activeElement.dataset.text;
 
     activeElement.parentElement.appendChild(textOverlay);
+
+    // END CUSTOM IMPLEMENTATION -- @asynchroza
 }
 function animate(e) {
     if (!(e.target instanceof HTMLImageElement)) {
