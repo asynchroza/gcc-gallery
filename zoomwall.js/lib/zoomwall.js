@@ -50,6 +50,7 @@ export function create(blocks, enableKeys = false) {
     }
 }
 function findWall(elem) {
+    console.log("HERE")
     // traverse dom to find gallery root node
     let parent = elem;
     while (parent.parentElement) {
@@ -144,6 +145,15 @@ function shrink(block) {
     }
 }
 function expand(block) {
+    // BEGIN CUSTOM IMPLEMENTATION -- @asynchroza
+
+    const activeTextOverlay = document.getElementsByClassName('text-overlay');
+    if (activeTextOverlay.length > 0) {
+        activeTextOverlay[0].remove();
+    }
+
+    // END CUSTOM IMPLEMENTATION -- @asynchroza
+
     const blocks = findWall(block);
     if (blocks == null) {
         return;
