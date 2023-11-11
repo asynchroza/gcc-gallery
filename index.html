@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery</title>
+    <link rel="icon" type="image/x-icon" href="/pictures/favicon.ico">
     <link
       rel="stylesheet"
       type="text/css"
       href="zoomwall.js/lib/zoomwall.css"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <style>
     .text-overlay {
@@ -51,7 +60,7 @@
       background-image: url("pictures/monet.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     @keyframes fadeIn {
@@ -104,7 +113,22 @@
       />
     </div>
   </body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js">
+  </script>
   <script type="module">
+      Toastify({
+      text: "To learn more about the artworks, just click on them, move your cursor to the bottom, and scroll through the text.",
+      duration: 5000,
+      newWindow: true,
+      close: false,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: false, 
+      style: {
+        background: "gray",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
     import * as zoomwall from "./zoomwall.js/lib/zoomwall.js";
     window.onload = function () {
       zoomwall.create(document.getElementById("gallery"));

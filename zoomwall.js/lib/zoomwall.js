@@ -66,7 +66,7 @@ function findWall(elem) {
 function removeActiveTextOverlays() {
       const activeTextOverlayArr = document.getElementsByClassName('text-overlay-init-pos');
       if (activeTextOverlayArr.length > 0) {
-          activeTextOverlayArr[0].remove();
+        activeTextOverlayArr[0].remove();
       }
 }
 // END CUSTOM IMPLEMENTATION -- @asynchroza
