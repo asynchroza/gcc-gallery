@@ -147,9 +147,10 @@ function shrink(block) {
 function expand(block) {
     // BEGIN CUSTOM IMPLEMENTATION -- @asynchroza
 
-    const activeTextOverlay = document.getElementsByClassName('text-overlay');
-    if (activeTextOverlay.length > 0) {
-        activeTextOverlay[0].remove();
+    const activeTextOverlayArr = document.getElementsByClassName('text-overlay');
+    if (activeTextOverlayArr.length > 0) {
+        for (const el in activeTextOverlayArr)
+        el.remove();
     }
 
     // END CUSTOM IMPLEMENTATION -- @asynchroza
@@ -268,9 +269,19 @@ function expand(block) {
 
     const activeElement = document.getElementsByClassName("active")[0];
     const textOverlay = document.createElement("div");
-    textOverlay.classList.add('text-overlay');
-    textOverlay.textContent = activeElement.dataset.text;
+    textOverlay.classList.add('text-overlay-init-pos');
 
+    textOverlay.addEventListener('mouseover', () => {
+        textOverlay.classList.remove('text-overlay-out');
+        textOverlay.classList.add('text-overlay');
+    })
+    textOverlay.addEventListener('mouseout', () => {
+        textOverlay.classList.add('text-overlay-out');
+    })
+
+    const p = document.createElement("p");
+    p.textContent = activeElement.dataset.text;
+    textOverlay.appendChild(p);
     activeElement.parentElement.appendChild(textOverlay);
 
     // END CUSTOM IMPLEMENTATION -- @asynchroza

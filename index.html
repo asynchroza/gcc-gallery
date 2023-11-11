@@ -12,17 +12,30 @@
   </head>
   <style>
     .text-overlay {
-      position: absolute;
-      top: 60%;
-      left: 0;
-      width: 100%;
-      height: 40%;
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1000;
       font-size: 20px;
       animation: fadeIn 0.5s ease-in-out forwards;
       color: white;
       text-align: center;
+    }
+
+    .text-overlay-out {
+      animation: fadeOut 0.5s ease-in-out forwards;
+    }
+
+    .text-overlay-init-pos {
+      position: absolute;
+      display: hidden;
+      top: 60%;
+      left: 0;
+      width: 100%;
+      height: 40%;
+    }
+
+    .text-overlay p {
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
 
     .zoomwall {
@@ -32,8 +45,8 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('pictures/monet.jpg');
-      background-size: cover; 
+      background-image: url("pictures/monet.jpg");
+      background-size: cover;
       background-repeat: no-repeat;
     }
 
@@ -43,6 +56,15 @@
       }
       to {
         opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
       }
     }
   </style>
@@ -68,8 +90,14 @@
         src="pictures/monet_argenteuil.jpeg"
         data-text="Claude Monet’s oil on canvas, “Snow at Argenteuil,” (1874-75) depicts a snowy winter landscape in the town of Argenteuil. Alongside buildings and people in the distance, there are two central figures on the road. Monet uses a more muted color palette in this piece mostly filled with blues and whites. We see a common pattern in Monet’s winter landscapes being filled with cooler tones but also containing flickers of warm colors. The composition is balanced overall with a blanket of snow being layered on each surface, over the houses and trees. The use of light, like in most of Monet’s winter landscapes is a central focus. It’s more subtle in this piece, however, it is still quite evident through the shadows on the snow and the gradience of the sky going from a warmer white to cooler blue in the distance to the foreground. The composition is also harmonized as the light and shadow parallel each other with the sky and snow on the ground. Although there are more people included in this piece, the most out of the landscapes being presented on this website, there is still a strong sense of tranquility being evoked towards the viewer."
       />
-      <img src="pictures/stack_wheat_snow_sunset.jpg" data-text="Claude Monet’s oil on canvas, “Stacks of Wheat (Sunset, Snow Effect),” (1891) depicts rural life in the winter. The scene presents a vibrant and color-filled landscape with brushstrokes that move in a cohesive direction in various segments of the piece. From the bottom left corner, the brushstrokes, rapid and strong, move diagonally from top left to bottom right. Other areas such as the ski seem to move from bottom left to top right. The same brushstrokes that are short and quick are also seen in the haystacks. There is no strong outline but the distinctness of the haystacks amid the other strokes is shown through the contrast between light and shadow. There is a strong use of color which contrasts from the traditional white snow blankets that are more commonly shown in winter landscape pieces. The use of color is shown through the blues, reds, and purples in the foreground and haystacks as well as the warm tones of orange and red in the setting sun. The use of red is shown both in the cool tones as well as the warm. This depiction of light being shown at a colorful time of day shows the energetic relationship between the winter landscape and the setting sun." />
-      <img src="pictures/effect_petit-montrouge.jpeg" data-text="Édouard Manet’s oil on canvas, “Effect of Snow at Petit-Montrouge,” (1870) depicts a muted, brown, grey, and white winter landscape. The primary color contrast in this piece is interesting as it is mostly between the landscape and the snow. Manet presents this view of the church of Saint-Pierre at Petit-Montrouge. It provides a clear and balanced composition as the grey sky is separated from the grey homes just by the subtle variations in hues. The brown hues are then used for more of the natural landscape. The blanket of snow as well as what is shown as the fog in the background are the brighter whites. The white snow is the main indicator and representation of light shown in this piece. The brushstroke is expressive while direct and linear which plays a dominant role in showing the atmosphere of the piece. Manet’s use of color, composition, and brushwork interplays with each other to add complexity and depth to this piece." />
+      <img
+        src="pictures/stack_wheat_snow_sunset.jpg"
+        data-text="Claude Monet’s oil on canvas, “Stacks of Wheat (Sunset, Snow Effect),” (1891) depicts rural life in the winter. The scene presents a vibrant and color-filled landscape with brushstrokes that move in a cohesive direction in various segments of the piece. From the bottom left corner, the brushstrokes, rapid and strong, move diagonally from top left to bottom right. Other areas such as the ski seem to move from bottom left to top right. The same brushstrokes that are short and quick are also seen in the haystacks. There is no strong outline but the distinctness of the haystacks amid the other strokes is shown through the contrast between light and shadow. There is a strong use of color which contrasts from the traditional white snow blankets that are more commonly shown in winter landscape pieces. The use of color is shown through the blues, reds, and purples in the foreground and haystacks as well as the warm tones of orange and red in the setting sun. The use of red is shown both in the cool tones as well as the warm. This depiction of light being shown at a colorful time of day shows the energetic relationship between the winter landscape and the setting sun."
+      />
+      <img
+        src="pictures/effect_petit-montrouge.jpeg"
+        data-text="Édouard Manet’s oil on canvas, “Effect of Snow at Petit-Montrouge,” (1870) depicts a muted, brown, grey, and white winter landscape. The primary color contrast in this piece is interesting as it is mostly between the landscape and the snow. Manet presents this view of the church of Saint-Pierre at Petit-Montrouge. It provides a clear and balanced composition as the grey sky is separated from the grey homes just by the subtle variations in hues. The brown hues are then used for more of the natural landscape. The blanket of snow as well as what is shown as the fog in the background are the brighter whites. The white snow is the main indicator and representation of light shown in this piece. The brushstroke is expressive while direct and linear which plays a dominant role in showing the atmosphere of the piece. Manet’s use of color, composition, and brushwork interplays with each other to add complexity and depth to this piece."
+      />
     </div>
   </body>
   <script type="module">
