@@ -9,12 +9,14 @@
       type="text/css"
       href="zoomwall.js/lib/zoomwall.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   </head>
   <style>
     .text-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
+      overflow: scroll;
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: 1000;
-      font-size: 20px;
+      font-size: 18px;
       animation: fadeIn 0.5s ease-in-out forwards;
       color: white;
       text-align: center;
@@ -26,11 +28,10 @@
 
     .text-overlay-init-pos {
       position: absolute;
-      display: hidden;
-      top: 60%;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: 40%;
+      height: 30vh;
     }
 
     .text-overlay p {
@@ -40,6 +41,8 @@
 
     .zoomwall {
       position: relative;
+      height: 100vh;
+      width: 100vw;
     }
 
     body {
@@ -48,6 +51,7 @@
       background-image: url("pictures/monet.jpg");
       background-size: cover;
       background-repeat: no-repeat;
+      font-family: 'Poppins', sans-serif;
     }
 
     @keyframes fadeIn {
