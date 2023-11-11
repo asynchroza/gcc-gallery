@@ -62,6 +62,14 @@ function findWall(elem) {
     }
     return null;
 }
+// BEGIN CUSTOM IMPLEMENTATION -- @asynchroza
+function removeActiveTextOverlays() {
+      const activeTextOverlayArr = document.getElementsByClassName('text-overlay-init-pos');
+      if (activeTextOverlayArr.length > 0) {
+          activeTextOverlayArr[0].remove();
+      }
+}
+// END CUSTOM IMPLEMENTATION -- @asynchroza
 function keys(blocks) {
     const keyPager = function (e) {
         if (e.defaultPrevented) {
@@ -119,6 +127,7 @@ function resize(blocks) {
 function reset(block) {
     block.style.transform = "translate(0, 0) scale(1)";
     block.classList.remove("active");
+    removeActiveTextOverlays();
     // swap images
     if (block.dataset.lowres) {
         block.src = block.dataset.lowres;
@@ -146,13 +155,7 @@ function shrink(block) {
 }
 function expand(block) {
     // BEGIN CUSTOM IMPLEMENTATION -- @asynchroza
-
-    const activeTextOverlayArr = document.getElementsByClassName('text-overlay');
-    if (activeTextOverlayArr.length > 0) {
-        for (const el in activeTextOverlayArr)
-        el.remove();
-    }
-
+    removeActiveTextOverlays()
     // END CUSTOM IMPLEMENTATION -- @asynchroza
 
     const blocks = findWall(block);
